@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>designed-model</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <!-- 继承 Spring Boot 官方 parent -->
+    <!-- 属性：统一管理版本 -->
+    <properties>
+        <java.version>17</java.version>
+        <spring-boot.version>3.2.0</spring-boot.version>
+        <lombok.version>1.18.30</lombok.version>
+        <!-- 其他常用依赖版本 -->
+    </properties>
+
+    <!-- 模块声明 -->
+    <modules>
+
+        <module>visitor-pattern</module>
+        <module>common</module>
+    </modules>
+
+
+
+    <!-- 依赖管理：只声明版本，不实际引入 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot BOM（推荐方式） -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version> ${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 其他公共依赖 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version> ${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- 例如：MyBatis、Jackson、Validation 等 -->
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 构建插件管理（可选） -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                    <configuration>
+                        <source> $ {java.version}</source>
+                        <target> $ {java.version}</target>
+                    </configuration>
+                </plugin>
+                <!-- Spring Boot 插件可在子模块中单独加 -->
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
