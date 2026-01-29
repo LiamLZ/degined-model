@@ -24,6 +24,9 @@
         <module>visitor-pattern</module>
         <module>common</module>
         <module>prototype-pattern</module>
+        <module>strategy-pattern</module>
+        <module>factory-method-pattern</module>
+        <module>state-pattern</module>
 
 
     </modules>
@@ -48,6 +51,13 @@
                 <artifactId>lombok</artifactId>
                 <version> ${lombok.version}</version>
                 <scope>provided</scope>
+
+
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.62</version>
             </dependency>
 
             <!-- 例如：MyBatis、Jackson、Validation 等 -->
