@@ -28,6 +28,7 @@
         <module>state-pattern</module>
         <module>composite-mode-pattern</module>
         <module>observer-model-pattern</module>
+        <module>memento-pattern</module>
     </modules>
 
 
