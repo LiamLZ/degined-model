@@ -1,10 +1,10 @@
-package com.example.prototypepattern;
+package com.example.singleton_pattern;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class   PrototypePatternApplicationTests {
+class SingletonPatternApplicationTests {
 
     @Test
     void contextLoads() {
